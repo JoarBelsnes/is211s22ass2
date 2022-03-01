@@ -41,6 +41,7 @@ public class SuperMarket {
             init.add(new BeginShoppingEvent(c));
             customers.add(c);
         }
+
     }
 
 
