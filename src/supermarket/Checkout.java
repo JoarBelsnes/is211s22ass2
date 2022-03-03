@@ -8,6 +8,8 @@ package supermarket;
 
 import eventsim.EventSim;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Random;
 
 /**
@@ -25,10 +27,17 @@ public class Checkout {
     //total time for checkout = PAY_DURATION + PROD_DURATION*customer.numProd
     SuperMarket shop;
     String name;
+    static List<Customer> customers;
 
     public Checkout(SuperMarket shop, int i) {
         this.shop = shop;
         this.name = "Checkout" + i;
+        customers = new ArrayList<>();
+
+    }
+
+    public static List<Customer> getQueue() {
+        return customers;
     }
 
 }

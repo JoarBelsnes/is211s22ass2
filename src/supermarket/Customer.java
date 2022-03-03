@@ -31,6 +31,7 @@ public class Customer {
     Checkout checkout;
 
     int beginShoppingTime;
+    int beginQueueTime;
     int shoppingDuration;
     int numProducts;
     int endShoppingTime;
@@ -46,8 +47,10 @@ public class Customer {
         name = "Cust" + i;
         System.out.println(name);
         beginShoppingTime = i;
+        System.out.println(beginShoppingTime);
         numProducts = EventSim.nextInt(MIN_PRODUCTS, MAX_PRODUCTS);
         shoppingDuration = EventSim.nextInt(MIN_SHOP_TIME, MAX_SHOP_TIME);
+        System.out.println(shoppingDuration);
         endShoppingTime = beginShoppingTime + shoppingDuration;
 
         queueWaitDuration = EventSim.nextInt(MIN_QUEUE_TIME, MAX_QUEUE_TIME);

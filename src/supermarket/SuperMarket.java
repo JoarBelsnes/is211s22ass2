@@ -22,25 +22,30 @@ public class SuperMarket {
         supern.startSim();
     }
 
-    public static final int NUM_CHECKOUTS = 1;
+    public static final int NUM_CHECKOUTS = 2;
     public static final int NUM_CUSTOMERS = 4;
 
     Checkout[] checkouts;
     List<Customer> customers;
     List<Event> init;
 
-
     public SuperMarket() {
+
+
         checkouts = new Checkout[NUM_CHECKOUTS];
-        for (int i = 0; i < NUM_CHECKOUTS; i++)
-            checkouts[i] = new Checkout(this, i);
         customers = new ArrayList<>();
+
         init = new ArrayList<Event>();
+        for (int i = 0; i < NUM_CHECKOUTS; i++) {
+            checkouts[i] = new Checkout(this, i);}
+
         for (int i = 0; i < NUM_CUSTOMERS; i++) {
             Customer c = new Customer(this, i);
             init.add(new BeginShoppingEvent(c));
             customers.add(c);
-        }
+            System.out.println(customers);
+            }
+
 
     }
 
